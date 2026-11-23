@@ -1,0 +1,255 @@
+{
+  "id": "3b8e5f0a-1c2d-4e6f-9a7b-5c4d3e2f1a10",
+  "revision": 0,
+  "last_node_id": 5,
+  "last_link_id": 1,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "NeronImage",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        460,
+        760
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "prompt_text",
+          "type": "STRING",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "NeronImage",
+        "neron_values": {
+          "expert": false,
+          "text": "рыжий кот-астронавт в стеклянном шлеме парит над Землёй, 3D мультфильм, мягкий свет",
+          "prompter": "🎨 до мелочей — твоё свято, пустоты заполнит / every detail",
+          "aspect": "⬜ 1:1 квадрат / square",
+          "quality": "💎 2K — максимум / maximum",
+          "sharpness": 1.0,
+          "seed": 1,
+          "control_after_generate": "randomize",
+          "count": 1,
+          "steps": 8,
+          "cfg": 1.0,
+          "sampler": "euler",
+          "scheduler": "simple",
+          "prompter_instruction": "",
+          "prompter_seed": 0,
+          "prompter_creativity": 0.7,
+          "style_lora": "— без стиля / no style —",
+          "style_strength": 1.0,
+          "keep_loaded": false,
+          "unet_model": "🤖 авто — из пакета / auto — from pack",
+          "clip_model": "🤖 авто — из пакета / auto — from pack",
+          "vae_model": "🤖 авто — из пакета / auto — from pack"
+        }
+      },
+      "widgets_values": [
+        false,
+        "рыжий кот-астронавт в стеклянном шлеме парит над Землёй, 3D мультфильм, мягкий свет",
+        "🎨 до мелочей — твоё свято, пустоты заполнит / every detail",
+        "⬜ 1:1 квадрат / square",
+        "💎 2K — максимум / maximum",
+        1.0,
+        1,
+        "randomize",
+        1,
+        8,
+        1.0,
+        "euler",
+        "simple",
+        "",
+        0,
+        0.7,
+        "— без стиля / no style —",
+        1.0,
+        false,
+        "🤖 авто — из пакета / auto — from pack",
+        "🤖 авто — из пакета / auto — from pack",
+        "🤖 авто — из пакета / auto — from pack"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "SaveImage",
+      "pos": [
+        500,
+        0
+      ],
+      "size": [
+        760,
+        800
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "Neron_Image/krea2"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Note",
+      "pos": [
+        -440,
+        0
+      ],
+      "size": [
+        400,
+        330
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ni_note": true
+      },
+      "widgets_values": [
+        "🖼 NERON IMAGE — готовый процесс\n\n1. «📥 Модели» — если чего-то не хватает, нода скачает сама. Уже лежащее не трогает.\n2. Напиши, что нарисовать — можно по-русски. Нажми кнопку запуска.\n3. Внизу ноды видно итоговый промпт — что ушло в модель.\n\nЗелёная нода с примером большого промпта НЕ подключена нарочно. Она для сложных сцен с несколькими героями."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 4,
+      "type": "PrimitiveStringMultiline",
+      "pos": [
+        -440,
+        340
+      ],
+      "size": [
+        400,
+        520
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "📝 Пример большого промпта",
+      "properties": {
+        "Node name for S&R": "PrimitiveStringMultiline",
+        "ni_prompt": true
+      },
+      "widgets_values": [
+        "A bright, cheerful 3D animated film scene in the style of a modern feature cartoon, sunny late morning. A cozy artist's studio on a flat rooftop high above a colorful seaside town with terracotta roofs, white walls and a sparkling turquoise sea in the distance. The sky is clear blue with a few fluffy white clouds.\n\nIn the center of the frame, a plump ginger tabby cat with big green eyes, white chest fur and a wide happy grin stands on its hind legs on a small wooden stool in front of a tall easel. The cat wears a slightly too-big dark blue painter's beret tilted to one side and a cream linen apron splashed with paint, and holds a thin brush in one paw, adding the last stroke to a canvas that shows a glowing golden sunrise over mountains.\n\nTo the left of the cat, a small friendly robot assistant about half the cat's height helps out: a round body of polished pale-mint enameled steel with a little brass steam valve on top that puffs tiny white clouds, two big round blue glass eyes, short jointed arms and three small wheels. With both arms it lifts a wooden palette covered in bright blobs of paint toward the cat.\n\nOn the right side, a vintage film camera on a wooden tripod points at the easel, and a curious white seagull with orange legs perches on top of the camera, tilting its head at the painting.\n\nAround them: clay pots with red geraniums and green herbs, a string of small warm light bulbs hanging over the rooftop, a striped yellow-and-white awning casting soft shade, and a few rolled-up sketches on a little round table. High in the sky behind the town, a red-and-yellow hot air balloon floats by, with the word \"NERON\" painted in big white letters on its side.\n\nSoft warm sunlight from the upper right, gentle shadows, rich saturated but friendly colors, smooth stylized 3D materials, playful and joyful mood. Wide shot from slightly below eye level, 28mm lens, everything in clear focus."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 5,
+      "type": "NeronThemeStudio",
+      "pos": [
+        -1080,
+        0
+      ],
+      "size": [
+        580,
+        430
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [],
+      "title": "🎨 Тема",
+      "properties": {
+        "Node name for S&R": "NeronThemeStudio"
+      },
+      "widgets_values": [
+        "{\"v\":1,\"theme\":{\"v\":1,\"id\":\"brown\",\"name\":\"Neron Brown\",\"author\":\"Neron\",\"c\":{\"bg\":\"#170e07\",\"grid\":\"#21150c\",\"title\":\"#4a2f1e\",\"body\":\"#2e1c10\",\"text\":\"#eedcc6\",\"widget\":\"#1c120b\",\"line\":\"#5e412b\",\"link\":\"#d9904a\",\"menu\":\"#22160e\",\"accent\":\"#f3a453\"},\"roles\":{\"model\":\"#e090d8\",\"input\":\"#7fb2e0\",\"text\":\"#ffcf70\",\"gen\":\"#f3a453\",\"latent\":\"#f29ab4\",\"image\":\"#97d17f\",\"audio\":\"#97d17f\",\"output\":\"#c9e07f\",\"util\":\"#c9ab8c\"},\"tint\":0.32,\"btint\":0.05,\"glow\":0.35,\"ui\":true,\"opacity\":1,\"halo\":0,\"wires\":{\"mode\":\"type\",\"custom\":{}},\"life\":{\"level\":1,\"frame\":true,\"wires\":true,\"bgfx\":\"none\",\"work\":true,\"beat\":true,\"speed\":1,\"fps\":0,\"quietRun\":false}},\"tab\":\"install\"}",
+        ""
+      ],
+      "widgets_values_named": {
+        "theme_json": "{\"v\":1,\"theme\":{\"v\":1,\"id\":\"brown\",\"name\":\"Neron Brown\",\"author\":\"Neron\",\"c\":{\"bg\":\"#170e07\",\"grid\":\"#21150c\",\"title\":\"#4a2f1e\",\"body\":\"#2e1c10\",\"text\":\"#eedcc6\",\"widget\":\"#1c120b\",\"line\":\"#5e412b\",\"link\":\"#d9904a\",\"menu\":\"#22160e\",\"accent\":\"#f3a453\"},\"roles\":{\"model\":\"#e090d8\",\"input\":\"#7fb2e0\",\"text\":\"#ffcf70\",\"gen\":\"#f3a453\",\"latent\":\"#f29ab4\",\"image\":\"#97d17f\",\"audio\":\"#97d17f\",\"output\":\"#c9e07f\",\"util\":\"#c9ab8c\"},\"tint\":0.32,\"btint\":0.05,\"glow\":0.35,\"ui\":true,\"opacity\":1,\"halo\":0,\"wires\":{\"mode\":\"type\",\"custom\":{}},\"life\":{\"level\":1,\"frame\":true,\"wires\":true,\"bgfx\":\"none\",\"work\":true,\"beat\":true,\"speed\":1,\"fps\":0,\"quietRun\":false}},\"tab\":\"install\"}",
+        "neron_theme": ""
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        520,
+        80
+      ]
+    }
+  },
+  "version": 0.8
+}
